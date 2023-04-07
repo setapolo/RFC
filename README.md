@@ -1,4 +1,4 @@
-# PapaMamaShell
+# PapaMama Coding
 
 PapaMamaShell is a minimalistic one-liner JavaScript library that enables you to create a simple domain-specific language (DSL) using the concept of shells (like seashells). You can combine features in units called "crums" (the inside of the shell).
 
