@@ -1,6 +1,6 @@
 # PapaMama Coding
 
-PapaMamaShell is a minimalistic one-liner JavaScript library that enables you to create a simple domain-specific language (DSL) using the concept of shells (like seashells). You can combine features in units called "crums" (the inside of the shell).
+PapaMama coding style is a minimalistic one-liner JavaScript library that enables you to create a simple domain-specific language (DSL) using the concept of shells (like seashells). You can combine features in units called "crums(clams)" (the inside of the shell or scrap things).
 
 ```javascript
 const RFC = (m, F) => (...R) => F = (...c) => R[0](c, R, m) ? F : RFC(m);
