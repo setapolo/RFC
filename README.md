@@ -6,7 +6,7 @@ PapaMama coding style is a minimalistic one-liner JavaScript library that enable
 const RFC = (m, F) => (...R) => F = (...c) => R[0](c, R, m) ? F : RFC(m);
 ```
 
-State management: The RFC function takes an initial state m as its first argument. This state can be an object or any other data type that you want to manage throughout the execution of the composed functions.
+State management: The RFC(Recursive Function Combinator) function takes an initial state m as its first argument. This state can be an object or any other data type that you want to manage throughout the execution of the composed functions.
 
 Function composition: The second argument F is a placeholder for the composed functions, which are supplied later as "Crums" through the returned function. The RFC function returns a new function that takes any number of "Crum" as its arguments, represented by the rest parameter ...R.
 
