@@ -14,3 +14,4 @@ Function execution: The returned function creates a new function F that takes a 
 
 This coding style allows for concise and flexible code, as well as a unique way of managing state and composing functionality in a single line. 
 
+![papamamalogo](https://github.com/setapolo/RFC/blob/main/Screen%20Shot%202023-04-30%20at%2014.02.13.png "logo")
