@@ -40,5 +40,91 @@ LOG = (c, R, m) => {...} defines the LOG function (Shell function or Head Crumb)
 The parts from ((c, R, m) => 1) to ((c, R, m) => 4) define four anonymous functions (CRUMs), each being simple functions that return integers from 1 to 4.
 
 
+# xeyes demo / Crum Hash and Preserved 
+```javascript
+"use strict;";
+setup=_=>createCanvas(500,500);
+const RFC=(m,F)=>(...R)=>(F=(...c)=>(R[0](c,R,m)?F:RFC(m)));
+RFC([])(LTR_store=(c,R,m)=>{
+  const store=_=>{
+    const head=_.shift();
+    R[1][head[0].name]=[];
+    Object.assign(R[1][head[0].name],_);
+    _.length=0;
+  };
+  c[0]?m.push(c):store(m);
+  return true;
+},window)
+({name:"bootstrup"})
+(Circle=(c,R,m)=>{
+  Object.assign(m,c[1][1]);
+  fill(m["fill"]);
+  circle(m.x,m.y,m.r)
+})
+(setForcus=(c,R,m)=>[{dx:mouseX,dy:mouseY}][0])
+(DISTANCE =(c,R,m) => {
+        let {ox:ox,oy:oy,dx:dx,dy:dy}=m;
+        const d=createVector(ox,oy);
+        const o=createVector(m.dx,m.dy);
+        const e=o.copy().sub(d).mult(30 * 0.3 / d.dist(o)).add(d);
+        return {x:e.x,y:e.y}
+})()
+({name:"xeyes"})
+(c=>{background(c[1][1]["fill"])},{fill:200})
+((c,R,m)=>[{x:20,y:30,r:30}][0])
+(Circle,{fill:255})
+((c,R,m)=>[{x:50,y:30,r:30}][0])
+(Circle,{fill:255})
+((c,R,m)=>[{x:50,y:30,r:9}][0])
+(setForcus)
+((c,R,m)=>[{ox:50,oy:30}][0])
+(DISTANCE)
+(Circle,{fill:0})
+((c,R,m)=>[{ox:20,oy:30}][0])
+(DISTANCE)
+(Circle,{fill:0})
+()
+({name:"lig"})
+((c,R,m)=>{text(frameCount,10,80);return {xx:21}},555)
+((c,R,m)=>{text(c[1][1]["text"],10,90);return {yy:22}},{text:"this is delete"})
+((c,R,m)=>{text(m.yy,10,100);return {zz:23}},777)
+();
+
+RFC([])(LTR_exec=(c,R,m)=>{
+  let M={};
+  const exec=(c,R,m)=>{
+    const ret=c[0](c,R,m);
+    Object.assign(m,ret);
+    Object.assign(m.m,ret);
+    return true
+  }
+  c[0]?m.push(c):0;
+  draw=z=>m.map((_,i)=>{
+    let a=[];
+    Object.assign(a,R[1][_[0]]);
+    a.unshift([exec]);
+    a.unshift([{a:i,m:M}]);
+    a.unshift([RFC]);
+    a.reduce((p,c,i,a)=>[p[0](c[0],c,_)]);
+  });
+  return true;  
+},window)("xeyes","j")("lig","k")();
+```
+
+This code creates a sample called "xeyes". First, the setup function is defined using createCanvas(500, 500) to create a canvas. The RFC function is used to define a function called LTR_store, which stores the state of the functions. This state object is called Crum Hash.
+
+Next, the Circle function is defined, which draws a circle using the given coordinates and radius. The setFocus function tracks the position of the mouse and stores it in the Crum Hash. The DISTANCE function calculates the distance between two coordinates and returns a new coordinate.
+
+Then, named steps called Preserved are added. For example, in the Preserved named xeyes, the background color is set, and two large white circles and two small black circles are drawn. These small circles move according to the position of the mouse. Also, in the Preserved named lig, the frame count and some text are drawn.
+
+Finally, the LTR_exec function is used to execute the functions with the specified names while updating the Crum Hash. This results in the execution of the two different Preserved, xeyes and lig, in sequence.
+
+This sample represents a face with eyes that move according to the position of the mouse. In addition, the Crum Hash is used to share and update the state between functions, enabling more complex animations and interactions.
+
+
+
+
+
+
 
 ![papamamalogo](https://github.com/setapolo/RFC/blob/main/Screen%20Shot%202023-04-30%20at%2014.02.13.png "logo")
