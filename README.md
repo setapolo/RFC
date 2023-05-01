@@ -122,7 +122,46 @@ Finally, the LTR_exec function is used to execute the functions with the specifi
 This sample represents a face with eyes that move according to the position of the mouse. In addition, the Crum Hash is used to share and update the state between functions, enabling more complex animations and interactions.
 
 
+#cealing and codefusion
 
+```javascript
+"use strict;";
+const RFC = (m, F) => (...R) => (F = (...c) => (R[0](c, R, m) ? F : RFC(m)));
+const GlueSHELL = RFC({t:0,S:[],D:[]})((c, R, m) => {
+  const [k, n] = [c.shift(), { ...m }];
+  let { t: t ,D:D,S:S} = n;
+  if(!t){
+    setup=_=>S.map(_=>_())
+    draw=_=>D.map(_=>_());    
+  }
+  if(k&&!c[0]){
+    const glue=((_,draw,setup,window)=>{//"cealing" the variables
+        eval(k);
+        draw?D.unshift(draw):0;setup?S.unshift(setup):0
+      });
+    glue();    
+  }
+  t++;
+  Object.assign(m, { t: t });
+  return true;
+})
+(`
+r=6;
+setup=_=>{createCanvas(500,500);colorMode(HSB);background(0);rectMode(CENTER);noStroke();}
+draw=_=>{for(y=0;y<height;y+=40)for(x=0;x<width;x+=40){fill(random(10,100),60,99);rect(20+x+random(-r,r),20+y+random(-r,r),20,20);}}
+//https://twitter.com/yoshiyuki_hongo/status/1644249232973627394
+`)
+(`
+p=z=x=y=d=a=f=0,draw=t=>{for(f++||createCanvas(w=255,w),p++,j=-1;j<w;y=2*j++/w-1)for(i=-1;i<w;x=2*i++/w-1,d=sqrt(x*x+y*y),z=int(w*cos(a=atan2(y,x))/d+p)^int(w*sin(a)/d+p))set(i,j,color(d,z&w,z&w));updatePixels()};
+//https://twitter.com/PilEmmanuel/status/1565684837511569409
+`);
+```
+
+In this code, the GlueSHELL function is used. The GlueSHELL function is defined using the RFC function and takes the crum hash m as an argument. This crumb hash m is a state object that stores and updates the state of the animation.
+
+Inside the GlueSHELL function, a variable named glue is assigned a function. This glue function is responsible for executing the setup and draw functions of the animation through a process called "cealing". Cealing refers to the process of enclosing variables, making them inaccessible from the outside. In this example, eval(k) is executed within the glue function, with k containing the animation code. Then, if the draw and setup functions exist, they are added to the D and S arrays, respectively.
+
+By using the GlueSHELL function, different animation codes can be executed individually and combined into a single animation. Additionally, by using cealing, variable conflicts and interference between animations can be avoided. This allows for defining multiple independent animations and combining them to achieve complex expressions.
 
 
 
