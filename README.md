@@ -122,7 +122,7 @@ Finally, the LTR_exec function is used to execute the functions with the specifi
 This sample represents a face with eyes that move according to the position of the mouse. In addition, the Crum Hash is used to share and update the state between functions, enabling more complex animations and interactions.
 
 
-#cealing and codefusion
+# cealing and codefusion
 
 ```javascript
 "use strict;";
