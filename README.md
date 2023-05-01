@@ -121,6 +121,7 @@ Finally, the LTR_exec function is used to execute the functions with the specifi
 
 This sample represents a face with eyes that move according to the position of the mouse. In addition, the Crum Hash is used to share and update the state between functions, enabling more complex animations and interactions.
 
+https://editor.p5js.org/setapolo/sketches/4FZVlkh7r
 
 # sealing and codefusion
 
@@ -163,7 +164,7 @@ Inside the GlueSHELL function, a variable named glue is assigned a function. Thi
 
 By using the GlueSHELL function, different animation codes can be executed individually and combined into a single animation. Additionally, by using cealing, variable conflicts and interference between animations can be avoided. This allows for defining multiple independent animations and combining them to achieve complex expressions.
 
-
+https://editor.p5js.org/setapolo/sketches/aLi9ZyWOb
 
 
 ![papamamalogo](https://github.com/setapolo/RFC/blob/main/Screen%20Shot%202023-04-30%20at%2014.02.13.png "logo")
