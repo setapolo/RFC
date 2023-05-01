@@ -122,7 +122,7 @@ Finally, the LTR_exec function is used to execute the functions with the specifi
 This sample represents a face with eyes that move according to the position of the mouse. In addition, the Crum Hash is used to share and update the state between functions, enabling more complex animations and interactions.
 
 
-# cealing and codefusion
+# sealing and codefusion
 
 ```javascript
 "use strict;";
@@ -159,7 +159,7 @@ p=z=x=y=d=a=f=0,draw=t=>{for(f++||createCanvas(w=255,w),p++,j=-1;j<w;y=2*j++/w-1
 
 In this code, the GlueSHELL function is used. The GlueSHELL function is defined using the RFC function and takes the crum hash m as an argument. This crumb hash m is a state object that stores and updates the state of the animation.
 
-Inside the GlueSHELL function, a variable named glue is assigned a function. This glue function is responsible for executing the setup and draw functions of the animation through a process called "cealing". Cealing refers to the process of enclosing variables, making them inaccessible from the outside. In this example, eval(k) is executed within the glue function, with k containing the animation code. Then, if the draw and setup functions exist, they are added to the D and S arrays, respectively.
+Inside the GlueSHELL function, a variable named glue is assigned a function. This glue function is responsible for executing the setup and draw functions of the animation through a process called "sealing". Sealing refers to the process of enclosing variables, making them inaccessible from the outside. In this example, eval(k) is executed within the glue function, with k containing the animation code. Then, if the draw and setup functions exist, they are added to the D and S arrays, respectively.
 
 By using the GlueSHELL function, different animation codes can be executed individually and combined into a single animation. Additionally, by using cealing, variable conflicts and interference between animations can be avoided. This allows for defining multiple independent animations and combining them to achieve complex expressions.
 
