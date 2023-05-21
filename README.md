@@ -14,6 +14,37 @@ Function execution: The returned function creates a new function F that takes a 
 
 This coding style allows for concise and flexible code, as well as a unique way of managing state and composing functionality in a single line. 
 
+# Hello World
+```javascript
+//papamam Hello,world
+"use strict;";
+const RFC=(m,F)=>(...R)=>(F=(...c)=>(R[0](c,R,m)?F:RFC(m)));
+RFC({ i:0,
+      p:(k,R,m)=>console.log(k?k.p:0,R,m),
+      base:(c,R,m)=>{
+        const {0:k}=c;const {1:r}=R;let {i:i}=m;
+        r?("cmd" in r)?m[r.cmd]?m[r.cmd](k,R,m):console.log(i):0:0;
+        Object.assign(m,{i:++i});
+        return k?k:!Object.assign(m,{...r});
+      }
+    })
+    ((c,R,m)=>m.base(c,R,m),{cmd:"p"})
+      ({p:"Hello,"})({p:"world"})()
+    ((c,R,m)=>m.base(c,R,m),{cmd:"p"})
+      ({p:"Hello,"})({p:"world#2"})()
+```
+This script is a simple "Hello, world" example using a higher-order function, RFC. The RFC function is a recursive function that accepts an initial state m and a function F and returns a new function that awaits further arguments R.
+
+The RFC function: This function takes a state object m and a closure F as arguments. It returns a new function that awaits further arguments R. When these arguments are provided, the closure R[0] is executed.
+
+The state object m: This object initially holds i:0 and two functions p and base. p is a function that prints the p property of its argument k. base is a function that performs operations based on its arguments c, R, and m. Specifically, if the second element r of R exists and r has a property cmd, it executes the function corresponding to cmd.
+
+The first closure passed to RFC: This closure invokes the base function in m. The object {cmd:"p"} passed next triggers the execution of the p function in m, and its result is printed.
+
+The objects {p:"Hello,"}, {p:"world"}, {p:"Hello,"}, and {p:"world#2"} passed next: These objects are passed to the RFC function, but what kind of operation they perform depends on the base function. In this code, unless there is a cmd property in base, no operation is defined for these objects.
+
+In summary, the script defines a recursive higher-order function RFC, which encapsulates a simple logic that prints a string based on the command cmd provided. In this case, the command p prints the p property of the given object. The script then executes the function with the arguments that contain the string "Hello, world" in their p properties.
+
 
 # C.R.U.M. (Collection of Resumable Units and Memory)
 ```javascript
